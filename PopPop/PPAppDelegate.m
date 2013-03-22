@@ -7,6 +7,7 @@
 //
 
 #import "PPAppDelegate.h"
+#import "PPMainViewController.h"
 
 @implementation PPAppDelegate
 
@@ -14,7 +15,11 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    PPMainViewController *mainViewController = [[PPMainViewController alloc] initWithNibName:@"PPMainViewController" bundle:nil];
+    self.window.rootViewController = mainViewController;
+    //NSLog(mainViewController);
+    //self.window.backgroundColor = [UIColor whiteColor];
+    application.applicationSupportsShakeToEdit = YES;
     [self.window makeKeyAndVisible];
     return YES;
 }
